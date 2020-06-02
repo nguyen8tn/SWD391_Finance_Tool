@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\All_Code\\Asp.net\\SWD391\\SWD391\\SWD391.csproj": {}
+    "D:\\All_Code\\C#Code\\New folder\\SWD391_Finance_Tool\\SWD391\\SWD391.csproj": {}
   },
   "projects": {
-    "D:\\All_Code\\Asp.net\\SWD391\\SWD391\\SWD391.csproj": {
+    "D:\\All_Code\\C#Code\\New folder\\SWD391_Finance_Tool\\SWD391\\SWD391.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\All_Code\\Asp.net\\SWD391\\SWD391\\SWD391.csproj",
+        "projectUniqueName": "D:\\All_Code\\C#Code\\New folder\\SWD391_Finance_Tool\\SWD391\\SWD391.csproj",
         "projectName": "SWD391",
-        "projectPath": "D:\\All_Code\\Asp.net\\SWD391\\SWD391\\SWD391.csproj",
+        "projectPath": "D:\\All_Code\\C#Code\\New folder\\SWD391_Finance_Tool\\SWD391\\SWD391.csproj",
         "packagesPath": "C:\\Users\\clone\\.nuget\\packages\\",
-        "outputPath": "D:\\All_Code\\Asp.net\\SWD391\\SWD391\\obj\\",
+        "outputPath": "D:\\All_Code\\C#Code\\New folder\\SWD391_Finance_Tool\\SWD391\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -41,6 +41,10 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[3.1.4, )"
+            },
             "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
               "target": "Package",
               "version": "[3.1.4, )"
@@ -70,6 +74,10 @@
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[12.0.3, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.0.0, )"
             }
           },
           "imports": [
