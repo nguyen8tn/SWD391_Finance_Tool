@@ -13,6 +13,8 @@ using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using SWD391.Data;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 
 namespace SWD391
 {
@@ -28,7 +30,7 @@ namespace SWD391
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            
             services.AddControllers().AddNewtonsoftJson(options =>
             options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
             services.AddDbContext<SWD391Context>(options =>
@@ -43,6 +45,22 @@ namespace SWD391
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "mobile API", Version = "v1" });
             });
+
+            //Authentication
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+            {
+                options.Authority = "https://securetoken.google.com/swd391-d8680";
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = true,
+                    ValidIssuer = "https://securetoken.google.com/swd391-d8680",
+                    ValidateAudience = true,
+                    ValidAudience = "swd391-d8680",
+                    ValidateLifetime = true
+                };
+            });
+            //--------------------------------------
+            services.AddControllers();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
